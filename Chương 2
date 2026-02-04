@@ -1,0 +1,123 @@
+Bài 1:
+n = int(input("Nhập một số (1-9): "))
+for i in range(1, 10):
+    print(f"{n} x {i} = {n * i}")
+
+BÀi 2:
+n = int(input("Nhập vào một số nguyên dương: "))
+if n < 2:
+    print(f"{n} không phải là số nguyên tố.")
+else:
+    la_so_nguyen_to = True
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            la_so_nguyen_to = False
+            break
+    
+    if la_so_nguyen_to:
+        print(f"{n} là số nguyên tố.")
+    else:
+        print(f"{n} không phải là số nguyên tố.")
+BÀi 3:
+n = int(input("Nhập n: "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+Bài 4:
+n = int(input("Nhập số nguyên dương: "))
+tong = 0
+while n > 0:
+    tong += n % 10
+    n //= 10
+print("Tổng các chữ số:", tong)
+
+bài 5:
+chuoi = input("Nhập chuỗi: ")
+ky_tu = input("Nhập ký tự cần đếm: ")
+print(f"Số lần xuất hiện: {chuoi.count(ky_tu)}")
+
+BÀi 6;
+def giai_thua(n):
+    if n == 0 or n == 1: return 1
+    return n * giai_thua(n - 1)
+
+n = int(input("Nhập n: "))
+print(f"Giai thừa: {giai_thua(n)}")
+
+bài 7:
+a = int(input("Nhập a: "))
+b = int(input("Nhập b: "))
+while b:
+    a, b = b, a % b
+print("ƯớC chung lớn nhất là:", a)
+
+Bài 8:
+n = int(input("Nhập số: "))
+dao_nguoc = 0
+while n > 0:
+    dao_nguoc = dao_nguoc * 10 + (n % 10)
+    n //= 10
+print("Số đảo ngược:", dao_nguoc)
+
+BÀi 9:
+n = input("Nhập số có 5 chữ số: ")
+print("Chữ số lớn nhất:", max(n))
+
+Bài 10:
+def tinh_tong(n):
+    if n == 1: return 1
+    return n + tinh_tong(n - 1)
+
+n = int(input("Nhập n: "))
+print("Tổng là:", tinh_tong(n))
+
+Bài 11:
+dtb = float(input("Nhập điểm trung bình: "))
+if dtb >= 8: print("Giỏi")
+elif dtb >= 6.5: print("Khá")
+elif dtb >= 5.0: print("Trung bình")
+else: print("Yếu")
+
+BÀi 12:
+n = int(input("Nhập n: "))
+tong_le = 0
+for i in range(1, n + 1, 2):
+    tong_le += i
+print("Tổng các số lẻ:", tong_le)
+
+Bài 13:
+while True:
+    mk = input("Nhập mật khẩu: ")
+    if mk == "python123":
+        print("Đăng nhập thành công!")
+        break
+    print("Sai rồi, mời nhập lại.")
+
+Bài 14:
+n = int(input("Nhập số n cần kiểm tra: "))
+if n <= 1:
+    print(f"{n} không phải là số nguyên tố.")
+else:
+    dem_uoc = 0
+    for i in range(1, n + 1):
+        if n % i == 0:
+            dem_uoc += 1
+    if dem_uoc == 2:
+        print(f"{n} là số nguyên tố.")
+    else:
+        print(f"{n} không phải là số nguyên tố.")
+
+Bài 15:
+n = int(input("Nhập một số nguyên dương: "))
+so_ban_dau = n
+tong = 0
+while n > 0:
+    chu_so_cuoi = n % 10
+    tong += chu_so_cuoi 
+    n = n // 10
+print(f"Tổng các chữ số của {so_ban_dau} là: {tong}")
+
+
+
