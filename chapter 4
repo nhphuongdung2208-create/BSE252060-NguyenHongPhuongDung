@@ -78,7 +78,7 @@ class Product:
     def __str__(self):
         return f"Sản phẩm: {self.name} - Giá: {self._price}"
 
-# Thử nghiệm
+# VD
 sp = Product("Laptop", 1500)
 print(sp)
 
