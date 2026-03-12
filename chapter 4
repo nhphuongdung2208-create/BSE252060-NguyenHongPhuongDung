@@ -1,0 +1,87 @@
+#Bài 1:
+def thong_ke_tuple(numbers):
+    if not numbers:
+        return 0, None, None
+
+    tong = sum(numbers)
+    lon_nhat = max(numbers)
+    nho_nhat = min(numbers)
+
+    return tong, lon_nhat, nho_nhat
+
+
+# VD
+my_tuple = (10, 25, 5, 40, 15)
+tong, max_val, min_val = thong_ke_tuple(my_tuple)
+
+print(f"Tổng: {tong}")
+print(f"Lớn nhất: {max_val}")
+print(f"Nhỏ nhất: {min_val}")
+
+#bài 2:
+def tinh_diem_trung_binh(danh_sach_diem):
+    if not danh_sach_diem:
+        return 0
+
+    tong_diem = sum(danh_sach_diem.values())
+    so_luong = len(danh_sach_diem)
+
+    return tong_diem / so_luong
+
+
+# VD
+sinh_vien = {"An": 8.5, "Bình": 7.0, "Chi": 9.0}
+dtb = tinh_diem_trung_binh(sinh_vien)
+print(f"Điểm trung bình của {len(sinh_vien)} sinh viên là: {dtb:.2f}")
+
+
+#Bài 3:
+def kiem_tra_key(dictionary, key):
+    if key in dictionary:
+        print(f"Key '{key}' có tồn tại trong dictionary.")
+    else:
+        print(f"Key '{key}' không tồn tại.")
+
+# VD
+data = {"brand": "Ford", "model": "Mustang", "year": 1964}
+kiem_tra_key(data, "model")
+kiem_tra_key(data, "color")
+
+#Bài 4:
+class Hoa:
+    def __init__(self, ten, mau):
+        self.ten = ten
+        self.mau = mau
+
+    def __str__(self):
+        return f"Hoa: {self.ten} | Màu sắc: {self.mau}"
+
+# VD
+hoa_hong = Hoa("Hồng Nhung", "Đỏ thẫm")
+print(hoa_hong)
+
+#BÀi 5:
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self._price = price if price > 0 else 0
+
+    def price(self):
+        return self._price
+
+    def price(self, value):
+        if value > 0:
+            self._price = value
+        else:
+            print("Lỗi: Giá sản phẩm phải lớn hơn 0!")
+
+    def __str__(self):
+        return f"Sản phẩm: {self.name} - Giá: {self._price}"
+
+# Thử nghiệm
+sp = Product("Laptop", 1500)
+print(sp)
+
+sp.price = 2000
+sp.price = -500
+print(sp)
